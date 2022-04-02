@@ -3328,13 +3328,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 676052863, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1218799662}
     - target: {fileID: 2968824282581448529, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
       propertyPath: m_Name
       value: Hero1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968824282581448529, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
-      propertyPath: m_TagString
-      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 2968824282581448531, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
       propertyPath: m_RootOrder
