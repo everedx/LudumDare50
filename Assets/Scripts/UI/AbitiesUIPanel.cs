@@ -48,6 +48,10 @@ public class AbitiesUIPanel : MonoBehaviour
             VerticalSelection(index);
         }
 
+        if (Controls.SpaceDown)
+        {
+            AbilityClicked(marker.GetSelectedItem());
+        }
     }
 
     private void VerticalSelection(int currentIndex)
@@ -109,7 +113,10 @@ public class AbitiesUIPanel : MonoBehaviour
 
     public void AbilityClicked(RectTransform abilityPrefab)
     {
-        ///Instan
+        ///Instantiatiate
+        
+        ///and use
+        
     }
 
 

@@ -548,7 +548,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 559244449}
           m_TargetAssemblyTypeName: AbitiesUIPanel, Assembly-CSharp
-          m_MethodName: SelectionChangedPointer
+          m_MethodName: AbilityClicked
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 328918159}
@@ -1259,7 +1259,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 559244449}
           m_TargetAssemblyTypeName: AbitiesUIPanel, Assembly-CSharp
-          m_MethodName: SelectionChangedPointer
+          m_MethodName: AbilityClicked
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 888832493}
@@ -2366,7 +2366,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 559244449}
           m_TargetAssemblyTypeName: AbitiesUIPanel, Assembly-CSharp
-          m_MethodName: SelectionChangedPointer
+          m_MethodName: AbilityClicked
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1422888158}
@@ -3099,7 +3099,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 559244449}
           m_TargetAssemblyTypeName: AbitiesUIPanel, Assembly-CSharp
-          m_MethodName: SelectionChangedPointer
+          m_MethodName: AbilityClicked
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2013891615}
