@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: ef56326406b553149a5ede5fd31a196f
+guid: 0f7306f3d98b33d49b6676252d64ed02
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5742144190005862570
-    second: boss_idle_0
+      213: -6300125856751165255
+    second: boss_cast_0
   - first:
-      213: -3085074806657409077
-    second: boss_idle_1
+      213: -7400540860197884882
+    second: boss_cast_1
   - first:
-      213: 3406571612866355325
-    second: boss_idle_2
+      213: 3897896720472267804
+    second: boss_cast_2
   - first:
-      213: -7339561905887146232
-    second: boss_idle_3
+      213: 4532434300965854843
+    second: boss_cast_3
   - first:
-      213: -6372691395590605432
-    second: boss_idle_4
+      213: 7310907340114011650
+    second: boss_cast_4
   - first:
-      213: -1890665946331242197
-    second: boss_idle_5
+      213: -3284840713122903530
+    second: boss_cast_5
   - first:
-      213: 378265039724654620
-    second: boss_idle_6
+      213: 5560792934986131534
+    second: boss_cast_6
   - first:
-      213: 6254880924463439412
-    second: boss_idle_7
+      213: 7399905995949943957
+    second: boss_cast_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_idle_0
+      name: boss_cast_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa06f56b7b130bf40800000000000000
-      internalID: 5742144190005862570
+      spriteID: 9b0e71ca9e47198a0800000000000000
+      internalID: -6300125856751165255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_idle_1
+      name: boss_cast_1
       rect:
         serializedVersion: 2
         x: 208
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcf9dab0fcc9f25d0800000000000000
-      internalID: -3085074806657409077
+      spriteID: e2c24222c4ffb4990800000000000000
+      internalID: -7400540860197884882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_idle_2
+      name: boss_cast_2
       rect:
         serializedVersion: 2
         x: 416
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7024d645d2964f20800000000000000
-      internalID: 3406571612866355325
+      spriteID: c1cd8e25a6c181630800000000000000
+      internalID: 3897896720472267804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_idle_3
+      name: boss_cast_3
       rect:
         serializedVersion: 2
         x: 624
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80f8b905553a42a90800000000000000
-      internalID: -7339561905887146232
+      spriteID: b7e9ddc9bf076ee30800000000000000
+      internalID: 4532434300965854843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_idle_4
+      name: boss_cast_4
       rect:
         serializedVersion: 2
         x: 0
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88532ae80f6af87a0800000000000000
-      internalID: -6372691395590605432
+      spriteID: 206aa41bd7f857560800000000000000
+      internalID: 7310907340114011650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_idle_5
+      name: boss_cast_5
       rect:
         serializedVersion: 2
         x: 208
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b21aff7c65103c5e0800000000000000
-      internalID: -1890665946331242197
+      spriteID: 61a819676c6e962d0800000000000000
+      internalID: -3284840713122903530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_idle_6
+      name: boss_cast_6
       rect:
         serializedVersion: 2
         x: 416
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c10bcbbac0edf3500800000000000000
-      internalID: 378265039724654620
+      spriteID: e48a95746b7eb2d40800000000000000
+      internalID: 5560792934986131534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_idle_7
+      name: boss_cast_7
       rect:
         serializedVersion: 2
         x: 624
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43e920f9f0dcdc650800000000000000
-      internalID: 6254880924463439412
+      spriteID: 59c21e30c4fb1b660800000000000000
+      internalID: 7399905995949943957
       vertices: []
       indices: 
       edges: []
