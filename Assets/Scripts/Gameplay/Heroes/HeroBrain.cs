@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HeroBrain : MonoBehaviour, ILeveable
 {
-
     [SerializeField] float baseSpeed;
     [SerializeField] float baseAttackRange;
     [SerializeField] float baseAttackDamage;
+    [SerializeField] float speedIncreasePerLevel;
+    [SerializeField] float damageIncreasePerLevel;
+    [SerializeField] float healthIncreasePerLevel;
 
-    private float speed;
+    private float speedModifier = 1;
+    private float speed { get { return (baseSpeed + level * speedIncreasePerLevel) * speedModifier; } }
+    private float attackDamage { get { return baseAttackDamage * damageIncreasePerLevel; } }
     private float attackRange;
-    private float attackDamage;
+
+    private uint level;
 
     private Rigidbody2D rBody2D;
     private HeroAttack attackComponent;
@@ -24,13 +30,12 @@ public class HeroBrain : MonoBehaviour, ILeveable
     void Start()
     {
         //for now
-        speed = baseSpeed;
         attackRange = baseAttackRange;
-        attackDamage = baseAttackDamage;
 
         rBody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         damageable = GetComponent<DamageableBase>();
+        damageable.ResetHealth(damageable.startingHealth + healthIncreasePerLevel * level);
         attackComponent = new HeroAttack(transform);
 
         rBody2D.velocity = Vector2.right * speed;
@@ -67,16 +72,22 @@ public class HeroBrain : MonoBehaviour, ILeveable
 
     public void SetLevel(uint level)
     {
-        //TO DO
+        this.level = level;
+        GetComponentInChildren<TextMeshProUGUI>().text = "lvl. " + this.level;
     }
 
-    public void ChangeSpeed(float baseSpeedPct)
+    public void ChangeSpeed(float speedPct)
     {
-        speed = baseSpeed * baseSpeedPct;
+        speedModifier = speedPct;
     }
 
     public void Hit(float damage)
     {
         damageable.Damage(damage);
+
+        if(damageable.IsDead())
+        {
+            Destroy(gameObject);
+        }
     }
 }

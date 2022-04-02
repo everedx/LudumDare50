@@ -24,5 +24,6 @@ public class SlowDown : MonoBehaviour, IAbility
     private void finishSlowing()
     {
         heroBrain.ChangeSpeed(1);
+        Destroy(gameObject);
     }
 }

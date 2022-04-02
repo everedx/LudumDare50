@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DamageableBase : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float startingHealth;
+    [SerializeField] public float startingHealth;
     [SerializeField] private DamageableType type;
 
     private float currentHealth;
@@ -53,6 +53,17 @@ public class DamageableBase : MonoBehaviour, IDamageable
     public float GetCurrentHealth()
     {
         return currentHealth;
+    }
+
+    public void ResetHealth(float health)
+    {
+        currentHealth = health;
+        startingHealth = health;
+    }
+
+    public bool IsDead()
+    {
+        return currentHealth <= 0;
     }
 }
 
