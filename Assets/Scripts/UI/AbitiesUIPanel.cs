@@ -1,22 +1,23 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AbitiesUIPanel : MonoBehaviour
 {
-    [SerializeField] List<RectTransform> abitities;
+    [SerializeField] List<LabeledAbility> abilities;
+    [SerializeField] List<RectTransform> abilityLabels;
     [SerializeField] Cursor marker;
     [SerializeField] Color selectedColor;
     [SerializeField] Color unselectedColor;
 
-    
-
     private void Start()
     {
-        
         marker.SelectionChanged += SelectionChangedHandler;
-        marker.MarkOption(abitities[0]);
+        marker.MarkOption(abilityLabels[0]);
+
+        RandomizeAbilities();
     }
 
     private void Update()
@@ -25,26 +26,26 @@ public class AbitiesUIPanel : MonoBehaviour
 
         if (Controls.DownDown)
         {
-            index = abitities.IndexOf(marker.GetSelectedItem());
+            index = abilityLabels.IndexOf(marker.GetSelectedItem());
             VerticalSelection(index);
 
         }
 
         if (Controls.LeftDown)
         {
-            index = abitities.IndexOf(marker.GetSelectedItem());
+            index = abilityLabels.IndexOf(marker.GetSelectedItem());
             HorizontalSelection(index);
         }
 
         if (Controls.RightDown)
         {
-            index = abitities.IndexOf(marker.GetSelectedItem());
+            index = abilityLabels.IndexOf(marker.GetSelectedItem());
             HorizontalSelection(index);
         }
 
         if (Controls.UpDown)
         {
-            index = abitities.IndexOf(marker.GetSelectedItem());
+            index = abilityLabels.IndexOf(marker.GetSelectedItem());
             VerticalSelection(index);
         }
 
@@ -59,16 +60,16 @@ public class AbitiesUIPanel : MonoBehaviour
         switch (currentIndex)
         {
             case 0:
-                marker.MarkOption(abitities[1]);
+                marker.MarkOption(abilityLabels[1]);
                 break;
             case 1:
-                marker.MarkOption(abitities[0]);
+                marker.MarkOption(abilityLabels[0]);
                 break;
             case 2:
-                marker.MarkOption(abitities[3]);
+                marker.MarkOption(abilityLabels[3]);
                 break;
             case 3:
-                marker.MarkOption(abitities[2]);
+                marker.MarkOption(abilityLabels[2]);
                 break;
         }
     }
@@ -77,16 +78,16 @@ public class AbitiesUIPanel : MonoBehaviour
         switch (currentIndex)
         {
             case 0:
-                marker.MarkOption(abitities[2]);
+                marker.MarkOption(abilityLabels[2]);
                 break;
             case 1:
-                marker.MarkOption(abitities[3]);
+                marker.MarkOption(abilityLabels[3]);
                 break;
             case 2:
-                marker.MarkOption(abitities[0]);
+                marker.MarkOption(abilityLabels[0]);
                 break;
             case 3:
-                marker.MarkOption(abitities[1]);
+                marker.MarkOption(abilityLabels[1]);
                 break;
         }
     }
@@ -94,7 +95,7 @@ public class AbitiesUIPanel : MonoBehaviour
 
     private void SelectionChangedHandler(RectTransform obj)
     {
-        foreach (RectTransform rect in abitities)
+        foreach (RectTransform rect in abilityLabels)
         {
             TextMeshProUGUI textComponent = rect.GetComponent<TextMeshProUGUI>();
             if(rect.Equals(obj))
@@ -115,11 +116,29 @@ public class AbitiesUIPanel : MonoBehaviour
     {
         abilityPrefab.GetComponent<AbilityContainer>().Use();
     }
+    public void RandomizeAbilities()
+    {
+        var selectedAbilities = new Dictionary<string, GameObject>(); // Assuming label is unique
 
+        while(selectedAbilities.Count < 4)
+        {
+            var r = Random.Range(0, 4);
 
+            if (!selectedAbilities.ContainsKey(abilities[r].Label))
+            {
+                selectedAbilities.Add(abilities[r].Label, abilities[r].Prefab);
+            }
+        }
 
+        int labelIndex = 0;
+        foreach(var kvp in selectedAbilities)
+        {
+            abilityLabels[labelIndex].gameObject.GetComponent<TextMeshProUGUI>().text = kvp.Key;
+            abilityLabels[labelIndex].gameObject.GetComponent<AbilityContainer>().abilityPrefab = kvp.Value;
 
-
+            labelIndex++;
+        }
+    }
 
     private static class Controls
     {
@@ -147,6 +166,11 @@ public class AbitiesUIPanel : MonoBehaviour
         public static bool SpaceUp { get => Input.GetButtonUp("Space"); }
         public static bool SpacePressed { get => Input.GetButton("Space"); }
     }
+}
 
-
+[Serializable]
+public struct LabeledAbility
+{
+    public string Label;
+    public GameObject Prefab;
 }

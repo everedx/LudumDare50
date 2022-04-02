@@ -5,7 +5,7 @@ using UnityEngine;
 public class AbilityContainer : MonoBehaviour
 {
     [SerializeField]
-    private GameObject abilityPrefab;
+    public GameObject abilityPrefab;
 
     private IAbility abilityToUse;
 
