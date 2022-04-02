@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack
+public class HeroAttack
 {
     Transform transform;
 
-    public EnemyAttack(Transform transform)
+    public HeroAttack(Transform transform)
     {
         this.transform = transform;
     }

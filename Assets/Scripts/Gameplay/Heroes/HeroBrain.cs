@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBrain : MonoBehaviour, ILeveable
+public class HeroBrain : MonoBehaviour, ILeveable
 {
 
     [SerializeField] float baseSpeed;
@@ -14,8 +14,9 @@ public class EnemyBrain : MonoBehaviour, ILeveable
     private float attackDamage;
 
     private Rigidbody2D rBody2D;
-    private EnemyAttack attackComponent;
+    private HeroAttack attackComponent;
     private Animator anim;
+    private DamageableBase damageable;
 
     private bool movementEnabled = true;
 
@@ -29,7 +30,8 @@ public class EnemyBrain : MonoBehaviour, ILeveable
 
         rBody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        attackComponent = new EnemyAttack(transform);
+        damageable = GetComponent<DamageableBase>();
+        attackComponent = new HeroAttack(transform);
 
         rBody2D.velocity = Vector2.right * speed;
 
@@ -71,5 +73,10 @@ public class EnemyBrain : MonoBehaviour, ILeveable
     public void ChangeSpeed(float baseSpeedPct)
     {
         speed = baseSpeed * baseSpeedPct;
+    }
+
+    public void Hit(float damage)
+    {
+        damageable.Damage(damage);
     }
 }

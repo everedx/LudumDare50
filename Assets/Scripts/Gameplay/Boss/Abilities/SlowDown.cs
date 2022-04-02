@@ -7,23 +7,23 @@ public class SlowDown : MonoBehaviour, IAbility
     [SerializeField] float slowSpeedPct;
     [SerializeField] float slowDuration;
 
-    public GameObject player;
-    public EnemyBrain enemyBrain;
+    public GameObject hero;
+    public HeroBrain heroBrain;
 
     public void Use()
     {
-        enemyBrain.ChangeSpeed(slowSpeedPct);
+        heroBrain.ChangeSpeed(slowSpeedPct);
         Invoke("finishSlowing", slowDuration);
     }
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Hero");
-        enemyBrain = player.GetComponent<EnemyBrain>();
+        hero = GameObject.FindGameObjectWithTag("Hero");
+        heroBrain = hero.GetComponent<HeroBrain>();
     }
 
     private void finishSlowing()
     {
-        enemyBrain.ChangeSpeed(1);
+        heroBrain.ChangeSpeed(1);
     }
 }
