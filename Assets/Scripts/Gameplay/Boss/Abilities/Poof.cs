@@ -9,6 +9,7 @@ public class Poof : MonoBehaviour
     {
         var bossPos = GameObject.FindWithTag("Player").transform.position;
         transform.position = bossPos;
+        Destroy(gameObject, 2);
     }
 
     // Update is called once per frame
