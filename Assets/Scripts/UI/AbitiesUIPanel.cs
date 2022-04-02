@@ -115,6 +115,7 @@ public class AbitiesUIPanel : MonoBehaviour
     public void AbilityClicked(RectTransform abilityPrefab)
     {
         abilityPrefab.GetComponent<AbilityContainer>().Use();
+        RandomizeAbilities();
     }
     public void RandomizeAbilities()
     {
