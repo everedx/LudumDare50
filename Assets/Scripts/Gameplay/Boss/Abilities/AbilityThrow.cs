@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class AbilityThrow : MonoBehaviour
 {
+    private const float launchOffset = -5; // Magic
+
     Rigidbody2D rigBody;
 
     [SerializeField] GameObject explosionObject;
 
-    // Start is called before the first frame update
+    private ParticleAttack particleAttack;
+
     void Awake()
     {
         rigBody = GetComponent<Rigidbody2D>();
 
-        Launch(new Vector2(-7,-2));
+        var hero = GameObject.FindGameObjectWithTag("Hero");
+        particleAttack = gameObject.GetComponentInChildren<ParticleAttack>();
+
+        Launch(hero.transform.position - transform.position);
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         Instantiate(explosionObject, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        particleAttack.DoDamage();
     }
 
     public void Launch(Vector2 target)
