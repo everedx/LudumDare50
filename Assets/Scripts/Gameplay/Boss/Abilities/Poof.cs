@@ -7,7 +7,7 @@ public class Poof : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var bossPos = GameObject.FindWithTag("Player").transform.position;
+        var bossPos = GameObject.FindWithTag("Player").transform.Find("PoofLocation").transform.position;
         transform.position = bossPos;
         Destroy(gameObject, 2);
     }
