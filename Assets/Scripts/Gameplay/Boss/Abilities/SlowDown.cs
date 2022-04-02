@@ -7,8 +7,8 @@ public class SlowDown : MonoBehaviour, IAbility
     [SerializeField] float slowSpeedPct;
     [SerializeField] float slowDuration;
 
-    public GameObject hero;
-    public HeroBrain heroBrain;
+    private GameObject hero;
+    private HeroBrain heroBrain;
 
     public void Use()
     {
@@ -20,6 +20,7 @@ public class SlowDown : MonoBehaviour, IAbility
     {
         hero = GameObject.FindGameObjectWithTag("Hero");
         heroBrain = hero.GetComponent<HeroBrain>();
+        transform.position = hero.transform.position;
     }
 
     private void finishSlowing()

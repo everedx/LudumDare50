@@ -113,10 +113,7 @@ public class AbitiesUIPanel : MonoBehaviour
 
     public void AbilityClicked(RectTransform abilityPrefab)
     {
-        ///Instantiatiate
-        
-        ///and use
-        
+        abilityPrefab.GetComponent<AbilityContainer>().Use();
     }
 
 
