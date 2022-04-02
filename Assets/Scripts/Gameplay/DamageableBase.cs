@@ -6,8 +6,9 @@ using UnityEngine;
 public class DamageableBase : MonoBehaviour, IDamageable
 {
     [SerializeField] private float startingHealth;
+    [SerializeField] private DamageableType type;
 
-    public float currentHealth;
+    private float currentHealth;
 
 
 
@@ -53,4 +54,10 @@ public class DamageableBase : MonoBehaviour, IDamageable
     {
         return currentHealth;
     }
+}
+
+public enum DamageableType
+{
+    PlayerObjects,
+    EnemyObjects
 }
