@@ -67,4 +67,9 @@ public class EnemyBrain : MonoBehaviour, ILeveable
     {
         //TO DO
     }
+
+    public void ChangeSpeed(float baseSpeedPct)
+    {
+        speed = baseSpeed * baseSpeedPct;
+    }
 }
