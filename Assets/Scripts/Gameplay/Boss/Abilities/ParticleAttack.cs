@@ -19,7 +19,7 @@ public class ParticleAttack : MonoBehaviour, IAbility
 
     private void OnParticlesHit(object sender, System.EventArgs e)
     {
-        heroBrain.
+        heroBrain.Hit(damage);
     }
 
     void Start()
