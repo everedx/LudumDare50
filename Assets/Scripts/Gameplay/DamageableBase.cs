@@ -10,8 +10,6 @@ public class DamageableBase : MonoBehaviour, IDamageable
 
     private float currentHealth;
 
-
-
     //Changed health event
     public event Action<float> HealthChanged;
     public event Action DeathHappened;
@@ -20,6 +18,7 @@ public class DamageableBase : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        Debug.Log(startingHealth);
         currentHealth = startingHealth;
     }
 
@@ -57,8 +56,13 @@ public class DamageableBase : MonoBehaviour, IDamageable
 
     public void ResetHealth(float health)
     {
+        float prevHealth = currentHealth;
+
         currentHealth = health;
         startingHealth = health;
+
+        if (prevHealth != currentHealth)
+            HealthChanged?.Invoke(currentHealth);
     }
 
     public bool IsDead()

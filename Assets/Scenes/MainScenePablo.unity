@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2291,6 +2291,7 @@ GameObject:
   - component: {fileID: 1422888160}
   - component: {fileID: 1422888159}
   - component: {fileID: 1422888161}
+  - component: {fileID: 1422888162}
   m_Layer: 5
   m_Name: Ability2
   m_TagString: Untagged
@@ -2337,7 +2338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ability 2
+  m_text: Wall
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25f2ca381e3b08c4a9f731f7937d7f01, type: 2}
   m_sharedMaterial: {fileID: -3119036287465243831, guid: 25f2ca381e3b08c4a9f731f7937d7f01, type: 2}
@@ -2459,6 +2460,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+--- !u!114 &1422888162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422888157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f7a79b098e3964db66435e2239700d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 8584198200447238247, guid: 40cbf1c422c855a49aed151d357c620c, type: 3}
 --- !u!1 &1447214617
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,6 +3411,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3335295160396912115, guid: 386c86342cbdf7f49a61e5e1bf739163, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335295160396912115, guid: 386c86342cbdf7f49a61e5e1bf739163, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335295160396912115, guid: 386c86342cbdf7f49a61e5e1bf739163, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3335295160396912116, guid: 386c86342cbdf7f49a61e5e1bf739163, type: 3}
       propertyPath: m_RootOrder
       value: 1
