@@ -14,6 +14,6 @@ public class BossHealth : DamageableBase
     // Update is called once per frame
     void Update()
     {
-        base.Damage(1);
+        //base.Damage(1);
     }
 }

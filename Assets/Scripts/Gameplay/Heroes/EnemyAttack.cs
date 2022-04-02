@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class EnemyAttack
 {
-    // Start is called before the first frame update
-    void Start()
+    Transform transform;
+
+    public EnemyAttack(Transform transform)
     {
-        
+        this.transform = transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    public IDamageable IsSomethingInRange(float range)
     {
-        
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, LayerMask.GetMask("Player"));
+
+        if (hit.transform !=null && hit.transform.TryGetComponent<IDamageable>(out IDamageable component))
+            return component;
+        return null;
+
     }
 }
