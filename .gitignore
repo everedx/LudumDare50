@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/AssetsStore/AllIn1SpriteShader/2DRenderer-URP-Package-2021.2+.unitypackage.meta
+Assets/AssetsStore/AllIn1SpriteShader/2DRenderer-URP-Package.unitypackage.meta
+Assets/AssetsStore/Pixel Arsenal/Upgrades/Pixel Arsenal Legacy Materials.unitypackage.meta
+Assets/AssetsStore/Pixel Arsenal/Upgrades/Pixel Arsenal LWRP 2019.2.3f1 Materials.unitypackage.meta
+Assets/AssetsStore/Pixel Arsenal/Upgrades/Pixel Arsenal Standard Materials.unitypackage.meta
