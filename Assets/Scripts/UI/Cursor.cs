@@ -30,7 +30,10 @@ public class Cursor : MonoBehaviour
         UIComponentToFollow = rect;
         SelectionChanged?.Invoke(UIComponentToFollow);
     }
-
+    public RectTransform GetSelectedItem()
+    {
+        return UIComponentToFollow;
+    }
   
 
 }
