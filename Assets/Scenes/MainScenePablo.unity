@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 328918161}
   - component: {fileID: 328918160}
   - component: {fileID: 328918162}
+  - component: {fileID: 328918163}
   m_Layer: 5
   m_Name: Ability4
   m_TagString: Untagged
@@ -436,7 +437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ability 4
+  m_text: Poof
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25f2ca381e3b08c4a9f731f7937d7f01, type: 2}
   m_sharedMaterial: {fileID: -3119036287465243831, guid: 25f2ca381e3b08c4a9f731f7937d7f01, type: 2}
@@ -558,6 +559,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+--- !u!114 &328918163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328918158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f7a79b098e3964db66435e2239700d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 428004409507386985, guid: 6a04be21cfb393f47b245d2af1d1a4b7, type: 3}
 --- !u!1 &330277116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,7 +2486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f7a79b098e3964db66435e2239700d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 8584198200447238247, guid: 40cbf1c422c855a49aed151d357c620c, type: 3}
+  abilityPrefab: {fileID: 773873588585479445, guid: 7d495dfbcd1603b4e9f8f2ed37a0a869, type: 3}
 --- !u!1 &1447214617
 GameObject:
   m_ObjectHideFlags: 0
