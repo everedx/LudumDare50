@@ -11,12 +11,6 @@ public class ParticleAttack : MonoBehaviour, IAbility
     public GameObject hero;
     public HeroBrain heroBrain;
 
-    public void Use()
-    {
-        var particles = GameObject.Instantiate(particlePrefab);
-        particles.GetComponent<FlyingParticles>().ParticlesHit += OnParticlesHit;
-    }
-
     private void OnParticlesHit(object sender, System.EventArgs e)
     {
         heroBrain.Hit(damage);
@@ -27,6 +21,11 @@ public class ParticleAttack : MonoBehaviour, IAbility
         boss = GameObject.FindGameObjectWithTag("Player");
         hero = GameObject.FindGameObjectWithTag("Hero");
         heroBrain = hero.GetComponent<HeroBrain>();
+
+        //var particles = GameObject.Instantiate(particlePrefab);
+        //particles.GetComponent<FlyingParticles>().ParticlesHit += OnParticlesHit;
+
+        heroBrain.Hit(damage); // Hit at the start for testing
     }
 
     // Update is called once per frame

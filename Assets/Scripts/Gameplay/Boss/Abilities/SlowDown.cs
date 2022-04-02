@@ -10,17 +10,15 @@ public class SlowDown : MonoBehaviour, IAbility
     private GameObject hero;
     private HeroBrain heroBrain;
 
-    public void Use()
-    {
-        heroBrain.ChangeSpeed(slowSpeedPct);
-        Invoke("finishSlowing", slowDuration);
-    }
 
     void Start()
     {
         hero = GameObject.FindGameObjectWithTag("Hero");
         heroBrain = hero.GetComponent<HeroBrain>();
         transform.position = hero.transform.position;
+
+        heroBrain.ChangeSpeed(slowSpeedPct);
+        Invoke("finishSlowing", slowDuration);
     }
 
     private void finishSlowing()

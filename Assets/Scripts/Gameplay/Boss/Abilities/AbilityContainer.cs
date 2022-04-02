@@ -18,11 +18,7 @@ public class AbilityContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (abilityToUse != null)
-        {
-            abilityToUse.Use();
-            abilityToUse = null;
-        }
+
     }
     
     public void Use()
