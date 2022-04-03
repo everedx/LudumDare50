@@ -23,6 +23,7 @@ public class HeroBrain : MonoBehaviour, ILeveable
     private HeroAttack attackComponent;
     private Animator anim;
     private DamageableBase damageable;
+    private IDamageable somethingDamageable;
 
     private bool movementEnabled = true;
     private bool stunned = false;
@@ -65,15 +66,15 @@ public class HeroBrain : MonoBehaviour, ILeveable
     {
         if (!stunned)
         {
-            IDamageable damageable = attackComponent.IsSomethingInRange(attackRange);
-            if (damageable != null)
+            somethingDamageable = attackComponent.IsSomethingInRange(attackRange);
+            if (somethingDamageable != null)
             {
+                anim.SetBool("attacking", true);
                 movementEnabled = false;
-                damageable.Damage(attackDamage); //For now, this... later this will be triggered by the animation
-                                                 //anim.SetTrigger("Attack");
             }
             else
             {
+                anim.SetBool("attacking", false);
                 movementEnabled = true;
             }
         }
@@ -122,5 +123,11 @@ public class HeroBrain : MonoBehaviour, ILeveable
             yield return new WaitForSeconds(1);
             counter++;
         }
+    }
+
+    public void AttackHit()
+    {
+        if(somethingDamageable != null)
+            somethingDamageable.Damage(attackDamage);
     }
 }

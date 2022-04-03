@@ -494,9 +494,9 @@ MonoBehaviour:
   baseSpeed: 1
   baseAttackRange: 1
   baseAttackDamage: 2
-  speedIncreasePerLevel: 0.2
-  damageIncreasePerLevel: 5
-  healthIncreasePerLevel: 5
+  speedIncreasePerLevel: 0.4
+  damageIncreasePerLevel: 15
+  healthIncreasePerLevel: 8
 --- !u!114 &9125858025720951757
 MonoBehaviour:
   m_ObjectHideFlags: 0
