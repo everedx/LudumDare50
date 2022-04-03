@@ -17,10 +17,14 @@ public class AbitiesUIPanel : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioClip audioSelect;
     [SerializeField] AudioClip audioClick;
+    
     bool controlsEnabled = true;
+    AudioSource aSource;
 
     private void Start()
     {
+        aSource = GetComponent<AudioSource>();
+
         marker.SelectionChanged += SelectionChangedHandler;
         marker.MarkOption(abilityLabels[0]);
 
@@ -110,6 +114,7 @@ public class AbitiesUIPanel : MonoBehaviour
             else
                 textComponent.color = unselectedColor;
         }
+        aSource.PlayOneShot(audioSelect);
     }
 
     public void SelectionChangedPointer(RectTransform selectedObject)
@@ -126,9 +131,9 @@ public class AbitiesUIPanel : MonoBehaviour
         string abilityToLookup = abilityPrefab.GetComponent<TextMeshProUGUI>().text;
         LabeledAbility ability = abilities.Find(x => x.Label == abilityToLookup);
         NotificationsHandler.instance.ShowNotification(ability.NotificationText);
+        aSource.PlayOneShot(audioClick);
 
 
-        
         StartCoroutine(HandleCooldown(ability.RecoveryTime));
     }
 

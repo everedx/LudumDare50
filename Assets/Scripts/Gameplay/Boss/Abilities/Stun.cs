@@ -9,14 +9,13 @@ public class Stun : MonoBehaviour, IAbility
     [SerializeField] float stunDurationInSeconds = 3;
     [SerializeField] GameObject stunParticleObject;
 
-    private GameObject boss;
+    private static int stunsAccumulated = 0;
+
     private List<HeroBrain> heroBrains;
     private List<GameObject> particlesReleased;
     // Start is called before the first frame update
     void Start()
     {
-        boss = GameObject.FindGameObjectWithTag("Player");
-
         heroBrains = new List<HeroBrain>();
         particlesReleased = new List<GameObject>();
 
@@ -40,18 +39,25 @@ public class Stun : MonoBehaviour, IAbility
             particlesReleased.Add(Instantiate(stunParticleObject, brain.transform.position + Utils.Vec2To3(Vector2.up) + Utils.Vec2To3(Vector2.left * 0.2f), Quaternion.identity));
             heroBrains.Add(brain);
         }
+
+        stunsAccumulated += 1;
         Invoke("FinishStun", stunDurationInSeconds);
 
     }
 
     private void FinishStun()
     {
-        foreach (HeroBrain brain in heroBrains)
+        stunsAccumulated -= 1;
+        if (stunsAccumulated == 0)
         {
-            brain.SetStun(false);
-            foreach(GameObject go in particlesReleased)
-                Destroy(go);
+            foreach (HeroBrain brain in heroBrains)
+                brain.SetStun(false);
         }
+        
+        
+
+        foreach (GameObject go in particlesReleased)
+            Destroy(go);
     }
 
 }
