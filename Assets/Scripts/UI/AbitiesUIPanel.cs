@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class AbitiesUIPanel : MonoBehaviour
     [SerializeField] Color selectedColor;
     [SerializeField] Color unselectedColor;
 
+    bool controlsEnabled = true;
+
     private void Start()
     {
         marker.SelectionChanged += SelectionChangedHandler;
@@ -24,32 +27,32 @@ public class AbitiesUIPanel : MonoBehaviour
     {
         int index = -1;
 
-        if (Controls.DownDown)
+        if (Controls.DownDown && controlsEnabled)
         {
             index = abilityLabels.IndexOf(marker.GetSelectedItem());
             VerticalSelection(index);
 
         }
 
-        if (Controls.LeftDown)
+        if (Controls.LeftDown && controlsEnabled)
         {
             index = abilityLabels.IndexOf(marker.GetSelectedItem());
             HorizontalSelection(index);
         }
 
-        if (Controls.RightDown)
+        if (Controls.RightDown && controlsEnabled)
         {
             index = abilityLabels.IndexOf(marker.GetSelectedItem());
             HorizontalSelection(index);
         }
 
-        if (Controls.UpDown)
+        if (Controls.UpDown && controlsEnabled)
         {
             index = abilityLabels.IndexOf(marker.GetSelectedItem());
             VerticalSelection(index);
         }
 
-        if (Controls.SpaceDown)
+        if (Controls.SpaceDown && controlsEnabled)
         {
             AbilityClicked(marker.GetSelectedItem());
         }
@@ -121,8 +124,24 @@ public class AbitiesUIPanel : MonoBehaviour
         NotificationsHandler.instance.ShowNotification(ability.NotificationText);
 
 
-        RandomizeAbilities();
+        
+        StartCoroutine(HandleCooldown(ability.RecoveryTime));
     }
+
+    private IEnumerator HandleCooldown(float waitTime)
+    {
+        controlsEnabled = false;
+        foreach (RectTransform rect in abilityLabels)
+            rect.gameObject.SetActive(false);
+        yield return new WaitForSeconds(waitTime);
+
+        foreach (RectTransform rect in abilityLabels)
+            rect.gameObject.SetActive(true);
+        RandomizeAbilities();
+        controlsEnabled = true;
+
+    }
+
     public void RandomizeAbilities()
     {
         var selectedAbilities = new Dictionary<string, GameObject>(); // Assuming label is unique
@@ -181,4 +200,5 @@ public struct LabeledAbility
     public string Label;
     public GameObject Prefab;
     public string NotificationText;
+    public float RecoveryTime;
 }
