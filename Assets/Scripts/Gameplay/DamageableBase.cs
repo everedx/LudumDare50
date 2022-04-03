@@ -53,6 +53,11 @@ public class DamageableBase : MonoBehaviour, IDamageable
         return currentHealth;
     }
 
+    public void ResetHealth()
+    {
+        ResetHealth(startingHealth);
+    }
+
     public void ResetHealth(float health)
     {
         float prevHealth = currentHealth;

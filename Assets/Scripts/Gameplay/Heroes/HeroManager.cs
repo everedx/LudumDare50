@@ -9,6 +9,7 @@ using System.Linq;
 public class HeroManager : MonoBehaviour
 {
     [SerializeField] private uint startingLevel;
+    [SerializeField] private BossBrain boss;
     [SerializeField] private GameObject[] heroPrefabs;
     [SerializeField] private GameObject transitionObject;
     [SerializeField] private int levelsToShowAnimation = 5;
@@ -53,6 +54,8 @@ public class HeroManager : MonoBehaviour
 
     private void StartNewRound()
     {
+        boss.ResetHealth();
+
         currentLevel++;
         
         int nHeroes = Mathf.Min((int)(((currentLevel - 1) / levelsToShowAnimation) + 1), heroPrefabs.Length);

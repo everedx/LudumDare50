@@ -6181,6 +6181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingLevel: 1
+  boss: {fileID: 1154540003}
   heroPrefabs:
   - {fileID: 2968824282581448529, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
   - {fileID: 4552613287593139228, guid: f3421c687601a854295d0316f2c7e69d, type: 3}
