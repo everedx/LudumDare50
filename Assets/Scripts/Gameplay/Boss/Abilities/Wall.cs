@@ -10,7 +10,7 @@ public class Wall : DamageableBase, IAbility
     // Start is called before the first frame update
     void Start()
     {
-        var hPos = GameObject.FindWithTag("Hero").transform.position;
+        var hPos = GameObject.FindWithTag("Hero").transform.position + Utils.Vec2To3(Vector2.up * 1.1f);
 
         var xPos = Mathf.Min(hPos.x + playerOffset, maxWallPos);
         transform.position = new Vector2(xPos, hPos.y);

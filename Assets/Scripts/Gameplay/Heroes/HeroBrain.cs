@@ -63,17 +63,21 @@ public class HeroBrain : MonoBehaviour, ILeveable
 
     private void Update()
     {
-        IDamageable damageable = attackComponent.IsSomethingInRange(attackRange);
-        if (damageable != null)
+        if (!stunned)
         {
-            movementEnabled = false;
-            damageable.Damage(attackDamage); //For now, this... later this will be triggered by the animation
-            //anim.SetTrigger("Attack");
+            IDamageable damageable = attackComponent.IsSomethingInRange(attackRange);
+            if (damageable != null)
+            {
+                movementEnabled = false;
+                damageable.Damage(attackDamage); //For now, this... later this will be triggered by the animation
+                                                 //anim.SetTrigger("Attack");
+            }
+            else
+            {
+                movementEnabled = true;
+            }
         }
-        else
-        { 
-            movementEnabled = true;
-        }
+       
 
     }
 
