@@ -22,6 +22,11 @@ public class HeroDisabler : MonoBehaviour
         }
     }
 
+    public void PlaySound(AudioClip clip)
+    {
+        GetComponent<AudioSource>().PlayOneShot(clip);
+    }
+
     [Serializable]
     private class HeroRepresentation
     {

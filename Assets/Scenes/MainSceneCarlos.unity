@@ -5805,6 +5805,7 @@ GameObject:
   - component: {fileID: 341008304}
   - component: {fileID: 341008305}
   - component: {fileID: 341008306}
+  - component: {fileID: 341008307}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -5928,6 +5929,102 @@ MonoBehaviour:
   - Hero: {fileID: 941921481}
     LevelToAppear: 3
   heroManager: {fileID: 330277117}
+--- !u!82 &341008307
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341008300}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &370996704
 GameObject:
   m_ObjectHideFlags: 0
@@ -6481,25 +6578,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilities:
-  - Label: Slow down
+  - Label: Rotten wind
     Prefab: {fileID: 5375057480907440203, guid: 102381238a1bb4644b872fc6b2d3637c, type: 3}
-    NotificationText: Indiana Bones used Slow!
+    NotificationText: Indiana Bones farted really bad
     RecoveryTime: 0.5
-  - Label: Fireball
+  - Label: Pyro
     Prefab: {fileID: 4632740446529619021, guid: 2642d4b359cee7d42b0205786377e1de, type: 3}
     NotificationText: Jon Bone Jovi throwed a fireball!
     RecoveryTime: 0.2
-  - Label: Wall
+  - Label: Chilling sight
     Prefab: {fileID: 773873588585479445, guid: 7d495dfbcd1603b4e9f8f2ed37a0a869, type: 3}
     NotificationText: Albert Spinestein created a wall!!
     RecoveryTime: 0.5
-  - Label: Poof
+  - Label: MegaDeath
     Prefab: {fileID: 428004409507386985, guid: 6a04be21cfb393f47b245d2af1d1a4b7, type: 3}
     NotificationText: Scary Potter failed the casting!! What a blunder.
     RecoveryTime: 0.2
-  - Label: Single stun
+  - Label: Frost ray
     Prefab: {fileID: 2138177772367810003, guid: 67e719a7821b61347a964d37cf21964d, type: 3}
-    NotificationText: Boney-Wan Kenobi used stun.
+    NotificationText: Boney-Wan Kenobi stunned a hero.
     RecoveryTime: 0.2
   - Label: Multistun
     Prefab: {fileID: 5100914164018492462, guid: a2c0a1191ad21b64dbf77590774758af, type: 3}
@@ -6513,15 +6610,15 @@ MonoBehaviour:
     Prefab: {fileID: 7442606307290157809, guid: 0f4547b82efc5ed4e9c9415cf67012f8, type: 3}
     NotificationText: Sylvester Stal-bone incapacitated the hero with poison!
     RecoveryTime: 0.75
-  - Label: Poison Cloud
+  - Label: Terror  cloud
     Prefab: {fileID: 5444350569165599009, guid: 8709616e70608f74facea148ff8ef8ae, type: 3}
     NotificationText: Pelvis Presley made everyone sick
     RecoveryTime: 1.25
-  - Label: Charm
+  - Label: Blink eye
     Prefab: {fileID: 428004409507386985, guid: 6a04be21cfb393f47b245d2af1d1a4b7, type: 3}
     NotificationText: Nicholas Ribcage tried to seduce... but no success.
     RecoveryTime: 0.5
-  - Label: Magic Shield
+  - Label: Arcane +1
     Prefab: {fileID: 428004409507386985, guid: 6a04be21cfb393f47b245d2af1d1a4b7, type: 3}
     NotificationText: Tommy Lee Bones used a magic shield. But there are no mages.
     RecoveryTime: 1
