@@ -6,6 +6,7 @@ public class ParticleAttack : MonoBehaviour, IAbility
 {
     [SerializeField] float damage;
     [SerializeField] GameObject particlePrefab;
+    [SerializeField] bool affectsAll = false;
 
     public HeroBrain heroBrain;
 
@@ -21,8 +22,18 @@ public class ParticleAttack : MonoBehaviour, IAbility
 
     public void DoDamage()
     {
-        var heroBrain = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroBrain>();
-        heroBrain.Hit(damage);
+        if (!affectsAll)
+        {
+            var heroBrain = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroBrain>();
+            heroBrain.Hit(damage);
+        }
+        else
+        {
+            foreach(var hero in GameObject.FindGameObjectsWithTag("Hero"))
+            {
+                hero.GetComponent<HeroBrain>().Hit(damage);
+            }
+        }
     }
 
     // Update is called once per frame

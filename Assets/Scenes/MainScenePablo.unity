@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5583,7 +5583,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 192, y: -50}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &328918160
 MonoBehaviour:
@@ -5769,7 +5769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9334fc2a5e2278044a45a784c160ca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newHeroEveryNLevels: 5
   startingLevel: 1
   heroPrefabs:
   - {fileID: 2968824282581448529, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
@@ -6376,6 +6375,7 @@ GameObject:
   - component: {fileID: 559244448}
   - component: {fileID: 559244447}
   - component: {fileID: 559244449}
+  - component: {fileID: 559244450}
   m_Layer: 5
   m_Name: AbilitiesPanel
   m_TagString: Untagged
@@ -6488,6 +6488,22 @@ MonoBehaviour:
     Prefab: {fileID: 8993845660367330746, guid: 2b128b368c2616841b3f74df6f4b8a28, type: 3}
     NotificationText: SPOOKY SCARY SKELETON
     RecoveryTime: 2
+  - Label: Toxic
+    Prefab: {fileID: 7442606307290157809, guid: 0f4547b82efc5ed4e9c9415cf67012f8, type: 3}
+    NotificationText: Sylvester Stal-bone incapacitated the hero with poison!
+    RecoveryTime: 0.75
+  - Label: Poison Cloud
+    Prefab: {fileID: 5444350569165599009, guid: 8709616e70608f74facea148ff8ef8ae, type: 3}
+    NotificationText: Pelvis Presley made everyone sick
+    RecoveryTime: 1.25
+  - Label: Charm
+    Prefab: {fileID: 428004409507386985, guid: 6a04be21cfb393f47b245d2af1d1a4b7, type: 3}
+    NotificationText: Nicholas Ribcage tried to seduce... but no success.
+    RecoveryTime: 0.5
+  - Label: Magic Shield
+    Prefab: {fileID: 428004409507386985, guid: 6a04be21cfb393f47b245d2af1d1a4b7, type: 3}
+    NotificationText: Tommy Lee Bones used a magic shield. But there are no mages.
+    RecoveryTime: 1
   abilityLabels:
   - {fileID: 888832493}
   - {fileID: 1422888158}
@@ -6497,8 +6513,104 @@ MonoBehaviour:
   selectedColor: {r: 0.5330274, g: 1, b: 0.5235849, a: 1}
   unselectedColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   cooldownIndicator: {fileID: 612465042}
-  audioSelect: {fileID: 0}
-  audioClick: {fileID: 0}
+  audioSelect: {fileID: 8300000, guid: 6bbed5c7739554a4d8fc268973c41762, type: 3}
+  audioClick: {fileID: 8300000, guid: a765109e0e9954bbfbec6ff4a77c527b, type: 3}
+--- !u!82 &559244450
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559244445}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &612465042
 GameObject:
   m_ObjectHideFlags: 0
@@ -6950,7 +7062,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -130, y: 37}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888832494
 MonoBehaviour:
@@ -8570,7 +8682,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -130, y: -50}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1422888159
 MonoBehaviour:
@@ -9756,7 +9868,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 192, y: 37}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2013891616
 MonoBehaviour:
@@ -10084,7 +10196,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.2050467, y: 0.21000004}
+  m_Offset: {x: 5.2050476, y: 0.28025734}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10095,7 +10207,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50.92514, y: 2.34375}
+  m_Size: {x: 50.92514, y: 2.4842646}
   m_EdgeRadius: 0
 --- !u!1 &2088463297
 GameObject:

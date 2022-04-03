@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   particlePrefab: {fileID: 0}
+  affectsAll: 1
   heroBrain: {fileID: 0}
 --- !u!1001 &3234443744482780571
 PrefabInstance:
