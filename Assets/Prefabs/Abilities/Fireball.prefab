@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionObject: {fileID: 104570, guid: 042c005b358f1c343837d505350c2b13, type: 3}
+  angleToThrow: 30
+  offsetExplosion: {x: 0, y: 0}
 --- !u!50 &4632740446529619025
 Rigidbody2D:
   serializedVersion: 4
@@ -97,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0245e1b9c43104c9fa53c4a35337bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 5
   particlePrefab: {fileID: 0}
   heroBrain: {fileID: 0}
 --- !u!1 &8936767526120005103
