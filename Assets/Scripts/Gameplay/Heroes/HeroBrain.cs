@@ -25,6 +25,7 @@ public class HeroBrain : MonoBehaviour, ILeveable
     private DamageableBase damageable;
 
     private bool movementEnabled = true;
+    private bool stunned = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,10 +47,16 @@ public class HeroBrain : MonoBehaviour, ILeveable
     {
         if (movementEnabled)
         {
-            if (rBody2D.velocity.x < speed)
+            if (stunned)
+                rBody2D.velocity = Vector2.zero;
+            else
             {
-                rBody2D.velocity = Vector2.right *speed;
+                if (rBody2D.velocity.x < speed)
+                {
+                    rBody2D.velocity = Vector2.right * speed;
+                }
             }
+            
         }
     }
 
@@ -79,6 +86,11 @@ public class HeroBrain : MonoBehaviour, ILeveable
     public void ChangeSpeed(float speedPct)
     {
         speedModifier = speedPct;
+    }
+
+    public void SetStun(bool status)
+    {
+        stunned = status;
     }
 
     public void Hit(float damage)

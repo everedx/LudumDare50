@@ -1,7 +1,40 @@
 fileFormatVersion: 2
 guid: c1167ab460ca4f14bb042d9ea06c987d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -403601823536809650
+    second: antorcha-Sheet_0
+  - first:
+      213: -5305445243519761502
+    second: antorcha-Sheet_1
+  - first:
+      213: -5965229329912929829
+    second: antorcha-Sheet_2
+  - first:
+      213: 2146186743741114677
+    second: antorcha-Sheet_3
+  - first:
+      213: 7891684400283556586
+    second: antorcha-Sheet_4
+  - first:
+      213: 6121769333692187409
+    second: antorcha-Sheet_5
+  - first:
+      213: -1217479904035464503
+    second: antorcha-Sheet_6
+  - first:
+      213: -4152041311942656924
+    second: antorcha-Sheet_7
+  - first:
+      213: -5817985100764016819
+    second: antorcha-Sheet_8
+  - first:
+      213: 8518002738144796801
+    second: antorcha-Sheet_9
+  - first:
+      213: 3934335340603614789
+    second: antorcha-Sheet_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +65,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +74,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,7 +134,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: antorcha-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 134
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e497365a74e166af0800000000000000
+      internalID: -403601823536809650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 134
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a308b419a54f56b0800000000000000
+      internalID: -5305445243519761502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 134
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd16cc2978f373da0800000000000000
+      internalID: -5965229329912929829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 134
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5396752f879c8cd10800000000000000
+      internalID: 2146186743741114677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea946e6625e48d60800000000000000
+      internalID: 7891684400283556586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 67
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1134a9346c4e4f450800000000000000
+      internalID: 6121769333692187409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 67
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca1ace4a74aa1fe0800000000000000
+      internalID: -1217479904035464503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 67
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c39ecdc6cf066c0800000000000000
+      internalID: -4152041311942656924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f0278306d524fa0800000000000000
+      internalID: -5817985100764016819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180ecea2c56063670800000000000000
+      internalID: 8518002738144796801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antorcha-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546a1f3b521999630800000000000000
+      internalID: 3934335340603614789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

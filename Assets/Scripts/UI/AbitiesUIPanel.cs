@@ -129,7 +129,7 @@ public class AbitiesUIPanel : MonoBehaviour
 
         while(selectedAbilities.Count < 4)
         {
-            var r = Random.Range(0, 4);
+            var r = Random.Range(0, abilities.Count);
 
             if (!selectedAbilities.ContainsKey(abilities[r].Label))
             {

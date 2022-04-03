@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class AbilityThrow : MonoBehaviour
 {
@@ -9,7 +11,8 @@ public class AbilityThrow : MonoBehaviour
     Rigidbody2D rigBody;
 
     [SerializeField] GameObject explosionObject;
-
+    [SerializeField] float angleToThrow = 30;
+    [SerializeField] Vector2 offsetExplosion = Vector2.zero;
     private ParticleAttack particleAttack;
 
     void Awake()
@@ -19,21 +22,21 @@ public class AbilityThrow : MonoBehaviour
         var hero = GameObject.FindGameObjectWithTag("Hero");
         particleAttack = gameObject.GetComponentInChildren<ParticleAttack>();
 
-        Launch(hero.transform.position - transform.position);
+        Launch(hero.transform.position - transform.position, angleToThrow);
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Instantiate(explosionObject, transform.position, Quaternion.identity);
+        Instantiate(explosionObject, transform.position + Utils.Vec2To3(offsetExplosion), Quaternion.identity);
         Destroy(gameObject);
         particleAttack.DoDamage();
     }
 
-    public void Launch(Vector2 target)
+    public void Launch(Vector2 target, float angle = 30)
     {
-        float angle = 60;
-
+       
+        
         Vector2 toPos = (Vector2)transform.position - target;
         float h = toPos.y;
         toPos.y = 0;
@@ -45,8 +48,11 @@ public class AbilityThrow : MonoBehaviour
         velocity.y = Mathf.Sin(a);
 
 
-
-        rigBody.velocity = velocity * vI;
-
+        Vector2 newVelocity = velocity * vI;
+        if(float.IsNaN(newVelocity.x) || float.IsNaN(newVelocity.y))
+            rigBody.velocity = Vector2.zero;
+        else
+            rigBody.velocity = newVelocity;
+       
     }
 }

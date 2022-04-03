@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAbility
 {
-    // public void Use(); // Looks like we don't need a Use function, as all abilities start as soon as they are instantiated
+    // public void Use(); // Looks like we don't need a Use function, as all abilities start as soon as they are instantiated -> LOL OK
 }
