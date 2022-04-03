@@ -14,7 +14,6 @@ public class DamageableBase : MonoBehaviour, IDamageable
     public event Action<float> HealthChanged;
     public event Action DeathHappened;
 
-
     // Start is called before the first frame update
     protected virtual void Start()
     {

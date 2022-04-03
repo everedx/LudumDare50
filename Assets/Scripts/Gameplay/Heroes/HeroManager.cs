@@ -79,6 +79,18 @@ public class HeroManager : MonoBehaviour
         return Mathf.Min((int)(((Mathf.Clamp(currentLevel,0,float.PositiveInfinity) - 1) / levelsToShowAnimation) + 1), heroPrefabs.Length);
     }
 
+    public void Restart()
+    {
+        currentHeroes.ForEach(x =>
+        {
+            if (x != null) Destroy(x);
+        });
+
+        Start();
+
+        boss.ResetHealth();
+    }
+
     public void StartGame()
     {
         started = true;

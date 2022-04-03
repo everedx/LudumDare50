@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour
     [SerializeField] HeroManager heroManager;
 
     private bool paused;
+    private bool pausedForBossDeath = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,20 +28,26 @@ public class Menu : MonoBehaviour
         {
             if (!paused)
             {
-                paused = true;
-                Time.timeScale = 0;
-                heroManager.StopGame();
-
-                foreach (Transform child in transform)
-                    child.gameObject.SetActive(true);
-
-                actionsPanel.SetActive(false);
+                Pause();
             }
             else
             {
                 PlaySelected();
             }
         }
+    }
+
+    public void Pause(bool bossDead = false)
+    {
+        pausedForBossDeath = bossDead;
+        paused = true;
+        Time.timeScale = 0;
+        heroManager.StopGame();
+
+        foreach (Transform child in transform)
+            child.gameObject.SetActive(true);
+
+        actionsPanel.SetActive(false);
     }
 
     public void SelectionChangedHandler(RectTransform obj)
@@ -64,6 +71,11 @@ public class Menu : MonoBehaviour
 
     public void PlaySelected()
     {
+        if(pausedForBossDeath)
+        {
+            heroManager.Restart();
+        }
+
         paused = false;
         heroManager.StartGame();
         foreach (Transform child in transform)
