@@ -5771,6 +5771,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingLevel: 1
   heroPrefab: {fileID: 2968824282581448529, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
+  transitionObject: {fileID: 341008300}
+  levelsToShowAnimation: 5
+  animDuration: 5.2
 --- !u!4 &330277118
 Transform:
   m_ObjectHideFlags: 0

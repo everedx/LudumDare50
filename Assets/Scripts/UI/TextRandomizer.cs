@@ -15,4 +15,11 @@ public class TextRandomizer : MonoBehaviour
         textComponent = GetComponent<TextMeshProUGUI>();
         textComponent.text = possibleDialogs[Random.Range(0, possibleDialogs.Count)];
     }
+
+
+    private void OnEnable()
+    {
+        textComponent = GetComponent<TextMeshProUGUI>();
+        textComponent.text = possibleDialogs[Random.Range(0, possibleDialogs.Count)];
+    }
 }
