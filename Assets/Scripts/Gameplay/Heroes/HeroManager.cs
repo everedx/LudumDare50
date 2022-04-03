@@ -18,6 +18,8 @@ public class HeroManager : MonoBehaviour
     private uint currentLevel;
     private bool showingShortcut = false;
 
+    private bool started;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,11 @@ public class HeroManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!started)
+        {
+            return;
+        }
+
         if (currentHeroes.All(x => x == null)) 
         {
             if (currentLevel % levelsToShowAnimation == 0 && !showingShortcut)
@@ -64,10 +71,18 @@ public class HeroManager : MonoBehaviour
         showingShortcut = false;
     }
 
-
-
     public int GetNumberOfHeroes()
     {
         return Mathf.Min((int)(((Mathf.Clamp(currentLevel,0,float.PositiveInfinity) - 1) / levelsToShowAnimation) + 1), heroPrefabs.Length);
+    }
+
+    public void StartGame()
+    {
+        started = true;
+    }
+
+    public void StopGame()
+    {
+        started = false;
     }
 }
