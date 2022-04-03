@@ -7,6 +7,8 @@ public class Wall : DamageableBase, IAbility
     private const float playerOffset = 1.5f;
     private const float maxWallPos = 5.5f;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,8 @@ public class Wall : DamageableBase, IAbility
 
     private void WallDeathHappened()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        GetComponent<Animator>().SetTrigger("Destroy");
     }
 
     // Update is called once per frame
