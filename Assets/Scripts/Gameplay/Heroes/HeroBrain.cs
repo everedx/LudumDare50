@@ -106,4 +106,21 @@ public class HeroBrain : MonoBehaviour, ILeveable
             Destroy(gameObject);
         }
     }
+
+
+    public void AddDOT(float damagePerSecond, int ticks)
+    {
+        StartCoroutine(InitializeDOT(damagePerSecond, ticks));
+    }
+
+    private IEnumerator InitializeDOT(float damagePerSecond, int ticks)
+    {
+        int counter = 0;
+        while (counter < ticks)
+        {
+            Hit(damagePerSecond);
+            yield return new WaitForSeconds(1);
+            counter++;
+        }
+    }
 }
