@@ -115,6 +115,12 @@ public class AbitiesUIPanel : MonoBehaviour
     public void AbilityClicked(RectTransform abilityPrefab)
     {
         abilityPrefab.GetComponent<AbilityContainer>().Use();
+
+        string abilityToLookup = abilityPrefab.GetComponent<TextMeshProUGUI>().text;
+        LabeledAbility ability = abilities.Find(x => x.Label == abilityToLookup);
+        NotificationsHandler.instance.ShowNotification(ability.NotificationText);
+
+
         RandomizeAbilities();
     }
     public void RandomizeAbilities()
@@ -174,4 +180,5 @@ public struct LabeledAbility
 {
     public string Label;
     public GameObject Prefab;
+    public string NotificationText;
 }

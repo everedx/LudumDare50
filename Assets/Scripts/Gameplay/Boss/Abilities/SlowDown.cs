@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SlowDown : MonoBehaviour, IAbility
@@ -7,23 +8,34 @@ public class SlowDown : MonoBehaviour, IAbility
     [SerializeField] float slowSpeedPct;
     [SerializeField] float slowDuration;
 
-    private GameObject hero;
-    private HeroBrain heroBrain;
+    private List<GameObject> heroes;
+    private GameObject boss;
+    private List<HeroBrain> heroBrains;
 
 
     void Start()
     {
-        hero = GameObject.FindGameObjectWithTag("Hero");
-        heroBrain = hero.GetComponent<HeroBrain>();
-        transform.position = hero.transform.position;
+        heroBrains = new List<HeroBrain>();
+        heroes = GameObject.FindGameObjectsWithTag("Hero").ToList();
+        boss = GameObject.FindGameObjectWithTag("Player");
+        transform.position = boss.transform.position  + Vector3.left * 5;
 
-        heroBrain.ChangeSpeed(slowSpeedPct);
+
+        foreach (GameObject hero in heroes)
+        {
+            heroBrains.Add(hero.GetComponent<HeroBrain>());
+            hero.GetComponent<HeroBrain>().ChangeSpeed(slowSpeedPct);
+        }
+
         Invoke("finishSlowing", slowDuration);
     }
 
     private void finishSlowing()
     {
-        heroBrain.ChangeSpeed(1);
+        foreach (HeroBrain brain in heroBrains)
+        {
+            brain.ChangeSpeed(1);
+        }
         Destroy(gameObject);
     }
 }
