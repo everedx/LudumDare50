@@ -6493,6 +6493,14 @@ MonoBehaviour:
     Prefab: {fileID: 5444350569165599009, guid: 8709616e70608f74facea148ff8ef8ae, type: 3}
     NotificationText: Pelvis Presley made everyone sick
     RecoveryTime: 1.25
+  - Label: Charm
+    Prefab: {fileID: 428004409507386985, guid: 6a04be21cfb393f47b245d2af1d1a4b7, type: 3}
+    NotificationText: Nicholas Ribcage tried to seduce... but no success.
+    RecoveryTime: 0.5
+  - Label: Magic Shield
+    Prefab: {fileID: 428004409507386985, guid: 6a04be21cfb393f47b245d2af1d1a4b7, type: 3}
+    NotificationText: Tommy Lee Bones used a magic shield. But there are no mages.
+    RecoveryTime: 1
   abilityLabels:
   - {fileID: 888832493}
   - {fileID: 1422888158}
