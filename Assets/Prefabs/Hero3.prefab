@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 780550305455474615}
   - component: {fileID: 780550305455474611}
   - component: {fileID: 780550305455474608}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Ability1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 780550306232076526}
   - component: {fileID: 780550306232076527}
   - component: {fileID: 780550306232076524}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: BossHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 780550306615223258}
   - component: {fileID: 780550306615223259}
   - component: {fileID: 780550306615223256}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 3297553754823599712}
   - component: {fileID: 3383946736566292896}
   - component: {fileID: 9125858025720951757}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hero3
   m_TagString: Hero
   m_Icon: {fileID: 0}
