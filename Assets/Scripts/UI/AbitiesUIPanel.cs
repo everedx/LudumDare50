@@ -12,7 +12,11 @@ public class AbitiesUIPanel : MonoBehaviour
     [SerializeField] Cursor marker;
     [SerializeField] Color selectedColor;
     [SerializeField] Color unselectedColor;
+    [SerializeField] GameObject cooldownIndicator;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip audioSelect;
+    [SerializeField] AudioClip audioClick;
     bool controlsEnabled = true;
 
     private void Start()
@@ -131,13 +135,20 @@ public class AbitiesUIPanel : MonoBehaviour
     private IEnumerator HandleCooldown(float waitTime)
     {
         controlsEnabled = false;
+        marker.gameObject.SetActive(false);
         foreach (RectTransform rect in abilityLabels)
             rect.gameObject.SetActive(false);
+        cooldownIndicator.SetActive(true);
+
+
         yield return new WaitForSeconds(waitTime);
 
+
+        cooldownIndicator.SetActive(false);
         foreach (RectTransform rect in abilityLabels)
             rect.gameObject.SetActive(true);
         RandomizeAbilities();
+        marker.gameObject.SetActive(true);
         controlsEnabled = true;
 
     }
