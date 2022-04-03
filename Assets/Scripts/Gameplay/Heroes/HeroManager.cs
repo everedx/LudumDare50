@@ -8,7 +8,7 @@ using UnityEngine;
 public class HeroManager : MonoBehaviour
 {
     [SerializeField] private uint startingLevel;
-    [SerializeField] private GameObject heroPrefab;
+    [SerializeField] private GameObject[] heroPrefabs;
     [SerializeField] private GameObject transitionObject;
     [SerializeField] private int levelsToShowAnimation = 5;
     [SerializeField] private float animDuration = 5.2f;
@@ -44,8 +44,17 @@ public class HeroManager : MonoBehaviour
 
     private void StartNewRound()
     {
-        currentHero = Instantiate(heroPrefab);
-        currentHero.GetComponent<ILeveable>().SetLevel(++currentLevel);
+        currentLevel++;
+
+        int nHeroes = Mathf.Min((int)(((currentLevel - 1) / levelsToShowAnimation) + 1), heroPrefabs.Length);
+
+        for(uint i = 0; i < nHeroes; i++)
+        {
+            currentHero = Instantiate(heroPrefabs[i]);
+            currentHero.transform.Translate(new Vector2(-1 * i, 0));
+            currentHero.GetComponent<ILeveable>().SetLevel(currentLevel - i * (uint)levelsToShowAnimation);
+        }
+        
         showingShortcut = false;
     }
 }

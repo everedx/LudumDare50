@@ -5769,8 +5769,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9334fc2a5e2278044a45a784c160ca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newHeroEveryNLevels: 5
   startingLevel: 1
-  heroPrefab: {fileID: 2968824282581448529, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
+  heroPrefabs:
+  - {fileID: 2968824282581448529, guid: 4e10b1f3b39d8cf4db407174b2860b33, type: 3}
+  - {fileID: 4552613287593139228, guid: f3421c687601a854295d0316f2c7e69d, type: 3}
+  - {fileID: 2586882214122154996, guid: 4b092fdd07706d343bf6e73ff2c5b44f, type: 3}
   transitionObject: {fileID: 341008300}
   levelsToShowAnimation: 5
   animDuration: 5.2
