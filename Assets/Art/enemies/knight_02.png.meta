@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 6b8d5953c8e55f8409db128123e56a33
+guid: 3075e8ae7276b824d81b3746e4838d39
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2337366135921124039
-    second: knight_01_0
+      213: -7494637001703831745
+    second: knight_02_0
   - first:
-      213: -68259644836179168
-    second: knight_01_1
+      213: 2817773914842126239
+    second: knight_02_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: knight_01_0
+      name: knight_02_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c22b91ed1eff6020800000000000000
-      internalID: 2337366135921124039
+      spriteID: f37c1f0fa53bdf790800000000000000
+      internalID: -7494637001703831745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_01_1
+      name: knight_02_1
       rect:
         serializedVersion: 2
         x: 48
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0239b05f63e7d0ff0800000000000000
-      internalID: -68259644836179168
+      spriteID: f97d683427eba1720800000000000000
+      internalID: 2817773914842126239
       vertices: []
       indices: 
       edges: []
