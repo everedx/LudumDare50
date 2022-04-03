@@ -5804,6 +5804,7 @@ GameObject:
   - component: {fileID: 341008302}
   - component: {fileID: 341008304}
   - component: {fileID: 341008305}
+  - component: {fileID: 341008306}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -5907,6 +5908,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableRequested: 0
+--- !u!114 &341008306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341008300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa4b84a6f9e9864fa0ee5581d2a4300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroes:
+  - Hero: {fileID: 87140176}
+    LevelToAppear: 1
+  - Hero: {fileID: 1865215770}
+    LevelToAppear: 2
+  - Hero: {fileID: 941921481}
+    LevelToAppear: 3
+  heroManager: {fileID: 330277117}
 --- !u!1 &370996704
 GameObject:
   m_ObjectHideFlags: 0

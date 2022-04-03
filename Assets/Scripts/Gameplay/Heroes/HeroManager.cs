@@ -63,4 +63,11 @@ public class HeroManager : MonoBehaviour
         
         showingShortcut = false;
     }
+
+
+
+    public int GetNumberOfHeroes()
+    {
+        return Mathf.Min((int)(((Mathf.Clamp(currentLevel,0,float.PositiveInfinity) - 1) / levelsToShowAnimation) + 1), heroPrefabs.Length);
+    }
 }
