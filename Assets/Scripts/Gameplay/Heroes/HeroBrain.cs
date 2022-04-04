@@ -78,6 +78,7 @@ public class HeroBrain : MonoBehaviour, ILeveable
                 movementEnabled = true;
             }
         }
+     
        
 
     }
@@ -96,6 +97,11 @@ public class HeroBrain : MonoBehaviour, ILeveable
     public void SetStun(bool status)
     {
         stunned = status;
+        if (stunned)
+        {
+            anim.SetBool("attacking", false);
+            movementEnabled = true;
+        }
     }
 
     public void Hit(float damage)
