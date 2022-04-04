@@ -18,6 +18,7 @@ public class HeroManager : MonoBehaviour
     private List<GameObject> currentHeroes;
     private uint currentLevel;
     private bool showingShortcut = false;
+    private float timeCounter = 0;
 
     private bool started;
 
@@ -35,6 +36,8 @@ public class HeroManager : MonoBehaviour
         {
             return;
         }
+
+        timeCounter += Time.deltaTime;
 
         if (currentHeroes.All(x => x == null)) 
         {
@@ -89,6 +92,7 @@ public class HeroManager : MonoBehaviour
         Start();
 
         boss.ResetHealth();
+        timeCounter = 0;
     }
 
     public void StartGame()
@@ -99,5 +103,16 @@ public class HeroManager : MonoBehaviour
     public void StopGame()
     {
         started = false;
+    }
+
+
+    public uint GetLevel()
+    {
+       return currentLevel;
+    }
+
+    public int GetTime()
+    {
+        return Mathf.FloorToInt(timeCounter);
     }
 }

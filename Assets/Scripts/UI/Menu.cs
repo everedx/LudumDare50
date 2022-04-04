@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
     [SerializeField] GameObject boss;
     [SerializeField] GameObject actionsPanel;
     [SerializeField] HeroManager heroManager;
+    
 
     private bool paused;
     private bool pausedForBossDeath = false;
@@ -82,8 +83,10 @@ public class Menu : MonoBehaviour
             child.gameObject.SetActive(false);
 
         boss.SetActive (true);
+        boss.GetComponent<BossBrain>().Restart();
         actionsPanel.SetActive(true);
 
         Time.timeScale = 1;
+        gameObject.SetActive(false);
     }
 }

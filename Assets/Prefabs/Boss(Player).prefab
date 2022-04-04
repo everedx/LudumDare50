@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 1000
   type: 0
+  menu: {fileID: 0}
 --- !u!95 &948327984
 Animator:
   serializedVersion: 3
@@ -190,7 +191,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bf81a904e37b9174486bcdb3424544a6, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 

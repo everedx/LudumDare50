@@ -17,13 +17,23 @@ public class BossBrain : DamageableBase
 
     private void BossBrain_DeathHappened()
     {
+        animator = GetComponent<Animator>();
+        animator.Play("Death");
+        menu.gameObject.SetActive(true);
         menu.Pause(bossDead: true);
+
     }
 
     public void Attack()
     {
         animator = GetComponent<Animator>();
         animator.Play("Casting");
+    }
+
+    public void Restart()
+    {
+        animator = GetComponent<Animator>();
+        animator.Play("Idle");
     }
 
     // Update is called once per frame
