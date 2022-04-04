@@ -20,7 +20,7 @@ public class FinalScreen:MonoBehaviour
         textLevel.text = level.ToString();
         textDifficulty.text = summary.Description;
         textDifficulty.color = summary.Color;
-        textTime.text = heroManager.GetTime().ToString();
+        textTime.text = heroManager.GetTime().ToString() + "s";
     }
 
     private LevelSummary GetSummary(uint level)
