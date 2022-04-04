@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0245e1b9c43104c9fa53c4a35337bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 40
   particlePrefab: {fileID: 0}
+  affectsAll: 0
   heroBrain: {fileID: 0}
 --- !u!1 &8936767526120005103
 GameObject:
